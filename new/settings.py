@@ -16,7 +16,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -35,7 +34,7 @@ ALLOWED_HOSTS = [
 
 
 # Application definition
-
+"""
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -51,6 +50,7 @@ LOGGING = {
         },
     },
 }
+"""
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -150,7 +150,7 @@ STATIC_URL = '/static/'
 #STATICFILES_DIRS=[
   #  os.path.join(BASE_DIR, "static")
 #]
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = os.path.join(BASE_DIR, "main\static")
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
