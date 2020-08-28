@@ -78,7 +78,7 @@ ROOT_URLCONF = 'new.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\Scripts\new\Scripts\new\main\templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
