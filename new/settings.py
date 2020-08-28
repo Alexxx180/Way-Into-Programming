@@ -28,7 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '3c0c5983010d.ngrok.io',
-    '127.0.0.1'
+    '127.0.0.1',
+    'wip2020.herokuapp.com'
     ]
 
 
