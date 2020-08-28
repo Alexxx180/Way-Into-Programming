@@ -29,7 +29,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '3c0c5983010d.ngrok.io',
     '127.0.0.1',
-    'wip2020.herokuapp.com'
+    'wip2020.herokuapp.com',
+    'git.heroku.com/wip2020.git'
     ]
 
 
