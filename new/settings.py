@@ -148,7 +148,7 @@ DATABASES['default'].update(db_from_env)
 STATIC_URL = '/static/'
 STATIC_ROOT = 'staticfiles'
 STATICFILES_DIRS=[
-    os.path.join(BASE_DIR, "main\static")
+    os.path.join(BASE_DIR, "static")
 ]
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
