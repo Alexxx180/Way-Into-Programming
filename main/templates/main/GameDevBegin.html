@@ -2,305 +2,53 @@
 <html>
 <meta charset="utf-8">
 <head>
-<title>{{title}}</title>
-<style type="text/css">
-#dialogoverlay{
-  display: block;
-  opacity: .8;
-  position: fixed;
-  top: 30%;
-  left: 50%;
-  background: #FFF;
-  width:100%;
-  z-index: 10;
-}
-#dialogbox{
-  display: block;
-  position: fixed;
-  top: 27%;
-  left: 35%;
-  background:#CFD2D4;
-  border-radius: 7px;
-  width:30%;
-  height: 450px;
-  z-index: 10;
-}
-#dialogbox>div{
-  position: relative;
-  top:0%;
-  background: #1D1D1D;
-  height:85.5%;
-}
-#i1{
-position: relative;
-/*top:50%;*/
-left:12%;
-height: 7.5%;
-font-size: 15pt;
-font-family: Impact;
-width: 70%;
-}
-#i2{
-position: relative;
-/*top:60%;*/
-left:12%;
-height: 7.5%;
-font-size: 15pt;
-font-family: Impact;
-width: 70%;
-}
-p {
-position: relative;
-/*top:10%;*/
-left: 15%;
-font-family: Roboto;
-font-size: 18pt;
-color: #FFFFFF;
-}
-a {
-	position: relative;
-	left: 24%;
-	font-family: Roboto;
-	font-weight: bold;
-	font-size: 36pt;
-}
-
-#iop {
-top:11%;
-}
-#iop1 {
-top:2%;
-}
-/*#dialogbox>div>#dialogboxhead{
-background: #666; float: left; font-size: 19px; height:100%; padding-left: 0.1%; color:#CCC; width: 43%;
-}
-#dialogbox>div>#dialogboxbody{
-background: #333; padding: 20px; height:93.5%; width: 94%; color:#FFFFFF; text-align:center; font-family: Segoe UI; padding-top: 5px;
-}*/
-</style>
-<script type="text/javascript">
-	function Play() {
-            document.getElementById("a1").play();
-    }
-	var i1;
-	var j1;
-	var d1;
-	function rt1() {
-		j1=0;
-		i1=0;
-		d1=0;
-	}
-
-	rt1();
-	function Click(){
-		//document.getElementById("i1").value="1";
-		//document.getElementById("i2").value="CAHEK";
-		document.getElementById("i3").value=1;
-		document.getElementById("i4").value=0;
-		document.getElementById("i5").value=30;
-		//document.getElementById("f1").onSubmit="return true;";
-		document.getElementById("f2").submit();
-	//	window.location.replace('/about-us');
-	}
-	//function ClickContinue() {
-
-	//}
-
-	function ChangeNew() {
-		if ((i1<14)&&(d1==0)) {
-			if(document.getElementById('New') === document.activeElement)
-			{
-				if (!document.getElementById('Con').disabled) 
-				{
-				document.getElementById("Con").style.color="#FFFFFF";
-			document.getElementById("Con").style.background="#000000";
-			}
-			var doc = document.getElementById("New");
-			} else {
-			if(document.getElementById('Con') === document.activeElement) {
-				document.getElementById("New").style.color="#FFFFFF";
-				document.getElementById("New").style.background="#000000";
-				var doc=document.getElementById("Con");
-			}
-		}
-			//var doc = document.getElementById("New");
-  			var color = ["#000000","#111111","#222222","#444444","#555555","#666666","#777777","#888888","#999999","#AAAAAA","#BBBBBB","CCCCCC","#DDDDDD","#EEEEEE","#FFFFFF"];
-  			var colord = ["#FFFFFF","#EEEEEE", "#DDDDDD","#BBBBBB","#AAAAAA","#999999","#888888","#777777","#666666","#555555","#444444","#333333","#222222","#111111","#000000"];
-  			doc.style.color = colord[j1];
-  			doc.style.backgroundColor = color[i1];
-		i1++;
-		j1++;
-	}
-		else {
-			if (i1==0){
-				d1= 0;
-			}
-			if (i1==14){
-				d1= 1;
-			}
-			if(document.getElementById('New') === document.activeElement)
-			{
-				if (!document.getElementById('Con').disabled) 
-				{
-				document.getElementById("Con").style.color="#FFFFFF";
-			document.getElementById("Con").style.background="#000000";
-			}
-			var doc = document.getElementById("New");
-			} else {
-			if(document.getElementById('Con') === document.activeElement) {
-				document.getElementById("New").style.color="#FFFFFF";
-				document.getElementById("New").style.background="#000000";
-				var doc=document.getElementById("Con");
-			}
-		}
-  			var color = ["#000000","#111111","#222222","#444444","#555555","#666666","#777777","#888888","#999999","#AAAAAA","#BBBBBB","#CCCCCC","#DDDDDD","#EEEEEE","#FFFFFF"];
-  			var colord = ["#FFFFFF","#EEEEEE", "#DDDDDD","#BBBBBB","#AAAAAA","#999999","#888888","#777777","#666666","#555555","#444444","#333333","#222222","#111111","#000000"];
-  			doc.style.color = colord[j1];
-  			doc.style.backgroundColor = color[i1];
-		i1--;
-		j1--;
-		}
-	}
-		setInterval(ChangeNew, 200);
-		//onclick="Click();"
-		//onclick="ClickContinue();"
-function sub1() {
-	//document.getElementById("i8").value=1;
-	//alert(document.getElementById("i5").value);
-	if (document.getElementById("reg").innerText!="Регистрация") {
-		document.getElementById("OK1").value="Авторизация";	
-		document.getElementById("reg").innerText="Регистрация";
-	} else {
-		document.getElementById("reg").innerText="Авторизация";
-		document.getElementById("OK1").value="Регистрация";		
-	}
-	if (document.getElementById("i5").value!=2) {
-		document.getElementById("i5").value=2;
-	} else {
-		document.getElementById("i5").value=1;		
-	}
-	//alert(document.getElementById("i5").value);
-	}
-function sub() {
-	//document.getElementById("i8").value=1;
-	//alert(document.getElementById("i5").value);
-	document.getElementById("f2").submit();
-	}
-function kray() {
-	/*alert(document.getElementById("i1").value);
-	alert(document.getElementById("i2").value);
-	alert(document.getElementById("i3").value);
-	alert(document.getElementById("i4").value);
-	alert(document.getElementById("i5").value);*/
-	document.getElementById("f2").submit();
-	//window.location.replace("/about-us");
-}
-</script>
+<title>Way into programming</title>
+<link rel="stylesheet" type="text/css" href="/static/styles/Total/Total.css">
+<link rel="stylesheet" type="text/css" href="/static/styles/Total/Media.css">
+<link rel="stylesheet" type="text/css" href="/static/styles/Main/Begin.css">
+<script type="text/javascript" src="/static/scripts/Main/Menu/BeginAnimate.js"></script>
 </head>
-<body bgcolor="#000000" onmouseover="Play();" onmouseout="Play();" onclick="Play();">
-<audio id="a1" src="/media/Main.ogg" type="audio/ogg" autoplay="true" loop controls hidden style="position:absolute; z-index: 9999;"></audio>
-<!--Сюда можно поместить фон какой-нибудь-->
-<!--<img src="">-->
-<center><h1 style="color:#FFFFFF; font-size: 48pt;">Путь в программирование</h1></center>
-	<!--{% csrf_token %}
-	{{ form.IDplayer }}<br>
-	{{ form.NAMEplayer }}<br>
-	{{ form.LEVELplayer }}<br>
-	{{ form.Level }}<br>
-	{{ form.NEXTexp }}-->
-<!--<form id="f1" method="POST">-->
-<form id="f2" method="POST">
+<body bgcolor="#000000">
+<audio id="a1" class="pabs z1" src="/media/Main1.ogg" type="audio/ogg" autoplay loop controls hidden ></audio>
+<div id="all" class="pabs whmx2 grid">
+<center id="GameTitle" class="fs200 grow1"><h1>Путь в программирование</h1></center>
+
+<form id="f2" method="POST" class="r2s5 c2s5">
 	<div id="dialogoverlay"></div>
-	<div id="dialogbox">
-		<br>
-		<a id="reg">Авторизация</a>
-		<div>
+	<div id="dialogbox" class="whmax z3 grid">
+		<a id="reg" class="grow1 fs200"><h2>Авторизация</h2></a>
+		<div id="GrayBox">
 			{% csrf_token %}
-			<p id="iop">Логин</p><br>
-			<br>
-			{{ form.IDplayer }}
-			<p id="iop1">Пароль</p>
-  			{{ form.NAMEplayer }}
-  			<p hidden>{{ form.LEVELplayer }}</p>
-  			<p hidden>{{ form.Level }}</p>
-  			<p hidden>{{ form.NEXTexp }}</p>
-  			<p hidden id="pop">{{ pop }}</p>
-  			<input type="button" value="ОК" id="OK" onclick="sub();" style="position: absolute; float: right; cursor: pointer; top: 73%; left:37.5%; font-family: System; font-size:24pt; -moz-border-radius:  5px; -webkit-border-radius:  5px; border: 3px solid #CCCCCC; color:#FFFFFF; border-radius:  5px; width: 25%; height: 15%; background: #00AA00" />
-  			<input type="button" value="Регистрация" id="OK1" onclick="sub1();" style="position: absolute; float: right; cursor: pointer; top: 0%; left:75.5%; font-family: System; font-size:24pt; -moz-border-radius:  5px; -webkit-border-radius:  5px; border: 3px solid #CCCCCC; color:#FFFFFF; border-radius:  5px; width: 34%; height: 15%; background: #00AAAA" />
+			<div id="Login" class="fs125 grow3">Логин</div>{{ form.IDplayer }}
+			<div id="Pass" class="fs125 grow7">Пароль</div>{{ form.NAMEplayer }}
+  			<input type="button" value="ОК" id="OK" class="btns fs150 whmax pnt" onclick="sub();" />
+  			<input type="button" value="Регистрация" id="OK1" class="btns fs150 whmax pnt grow1" onclick="sub1();" />
 		</div>
 	</div>
-<!--</form>-->
+	<div id="OtherFields" class="fs100">
+	<div id="F3">[i3] Уровень игрока :</div> {{ form.LEVELplayer }}
+  	<div id="F4">[i4] Уровень карты  :</div> {{ form.Level }}
+  	<div id="F5">[i5] До след. ур.   :</div> {{ form.NEXTexp }}
+  	<div id="F6">[i6] Код у игрока   :</div> {{ form.Code }}
+  	<div id="F7">[i7] Особое значение:</div><div id="pop"> {{ pop }}</div>
+  	</div>
 </form>
-<div id="text" style="position: absolute; top: 40%; left:40%; border: 3px solid #CCCCCC; color: #FFFFFF; box-shadow: 0 0 30px rgba(0,0,0,0.5); background:#333333; font-family: Segoe UI; font-size:14pt; padding: 25px; padding-top: 30px; width:15%; height: 20%">
-	<input type="button" onclick="Click();" value="Новая игра" id="New" style="position: absolute; cursor: pointer; top: 5%; left:0%; font-family: Segoe UI; font-size:22pt; background:#000000; color:#FFFFFF; border: 0; width: 100%; height: 30%;" autofocus></input>
-	<div id="d1">{{ player }}</div>
-<div id="d2">{{ player1 }}</div>
-<div id="d3">{{ player2 }}</div>
-<div id="d4">{{ player3 }}</div>
-<div id="d5">{{ player4 }}</div>
-<input type="button" value="Продолжить" onclick="kray();" id="Con" style="position: absolute; cursor: pointer; top: 38%; left:0%; font-family: Segoe UI; font-size:22pt; background:#000000; color:#666666; border: 0; width: 100%; height: 30%;" disabled /></div></form>
-	<!---moz-border-radius:  5px; -webkit-border-radius:  5px; border: 3px solid #CCCCCC; border-radius:  5px;-->
-<div style="background-color:#6D6D6D; opacity: 0.6; position: absolute; top:0px; left: 0px; height: 100%; width: 100%; z-index:9; display: block;" id="TEMHO"></div>
-<script type="text/javascript">
-	//alert(123);
-//alert(document.getElementById("a1").autoplay);
-	/*document.getElementById("i1").hidden=true;
-	document.getElementById("i2").hidden=true;
-	document.getElementById("i3").hidden=true;
-	document.getElementById("i4").hidden=true;
-	document.getElementById("i5").hidden=true;*/
-	//document.getElementById("i3").value=1;
-	//document.getElementById("i4").value=1;
-	//document.getElementById("i5").value=1;
-	if (Number(document.getElementById("d4").innerText)){
-		//alert(1);
-		document.getElementById("i1").value=document.getElementById("d1").innerText;
-		document.getElementById("i2").value=document.getElementById("d2").innerText;
-		document.getElementById("i3").value=Number(document.getElementById("d3").innerText);
-		document.getElementById("i4").value=Number(document.getElementById("d4").innerText);
-		document.getElementById("i5").value=Number(document.getElementById("d5").innerText);
-	} else {
-		document.getElementById("i1").value=document.getElementById("d1").innerText;
-		document.getElementById("i2").value=document.getElementById("d2").innerText;
-		//document.getElementById("i1").value="1";
-		//document.getElementById("i2").value="CAHEK";
-		document.getElementById("i3").value=1;
-		document.getElementById("i4").value=0;
-		document.getElementById("i5").value=30;
-	}
-	if (Number(document.getElementById("d4").innerText)>=1) {
-		document.getElementById("Con").disabled=false;
-	}
-	//alert(Number(document.getElementById("i5").value));
-	//alert(Number(document.getElementById("pop").innerText));
-	if (Number(document.getElementById("pop").innerText)==1) {
-		document.getElementById("i1").value=document.getElementById("d1").innerText;
-		document.getElementById("i2").value=document.getElementById("d2").innerText;
-		document.getElementById("i3").value=Number(document.getElementById("d3").innerText);
-		document.getElementById("i4").value=Number(document.getElementById("d4").innerText);
-		document.getElementById("i5").value=Number(document.getElementById("d5").innerText);
-		//alert(Number(document.getElementById("pop").innerText));
-		//alert(Number(document.getElementById("i5").value);
-		//alert(1);
-		//document.getElementById("dialogoverlay").hidden=true;
-		//document.getElementById("dialogbox").hidden=true;
-		//document.getElementById("TEMHO").hidden=true;
-		document.getElementById("f2").hidden=true;
-		//document.getElementById("i5").value=1;
-		//document.getElementById("dialogoverlay").style.display="none";
-		//document.getElementById("dialogbox").style.display="none";
-		document.getElementById("TEMHO").style.display="none";
-		//alert(Number(document.getElementById("i5").value));
-	} else {
-		document.getElementById("i3").value=1;
-		document.getElementById("i4").value=1;
-		document.getElementById("i5").value=1;
-	}
-	document.getElementById("d1").innerText="";
-	document.getElementById("d2").innerText="";
-	document.getElementById("d3").innerText="";
-	document.getElementById("d4").innerText="";
-	document.getElementById("d5").innerText="";
+
+<script type="text/javascript"> function ach() { let tr=document.getElementById("i1").value; let url_mask = ("{% url 'path7' pk='12345' %}").replace(/12345/, tr.toString());
+window.location.replace(url_mask); }
 </script>
+<div id="text" class="whmax fs100 bord shd grid grow3 gcol3">
+	<input type="button" onclick="Click();" onfocus="ReSelect('New');" value="Новая игра" id="New" class="pnt grow2 gcol1 fs150 Bbtn" autofocus></input>
+	<div id="hiddenFields" class="bord shd">
+	<div id="d1">{{ player }}</div>
+	<div id="d2">{{ player1 }}</div>
+	<div id="d3">{{ player2 }}</div>
+	<div id="d4">{{ player3 }}</div>
+	<div id="d5">{{ player4 }}</div>
+	</div>
+	<input type="button" value="Продолжить" onclick="sub();" onfocus="ReSelect('Con');" id="Con" class="pnt grow4 gcol1 fs150" disabled />
+	<input type="button" value="Достижения" onclick="ach();" onfocus="ReSelect('Ach');" id="Ach" class="pnt grow6 gcol1 fs150" />
+</div>
+<script type="text/javascript" src="/static/scripts/Main/Menu/BeginFunc.js"></script>
 </body>
 </html>

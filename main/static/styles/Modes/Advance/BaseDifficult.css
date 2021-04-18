@@ -1,0 +1,321 @@
+body { margin: 0; }
+/*Кнопка "Запуск"/"Сброс"*/
+#ZAPUSK{
+  color:#FFFFFF;
+  background: #00AA00;
+}
+/*Кнопка "Записи"*/
+#NoteButton {
+  color:#FFFFFF;
+  background: #AAAA00;
+}
+/*Кнопка "Код"*/
+#CodeButton {
+  color:#FFFFFF;
+  background: #99AA99;
+}
+/*Фича "Записи ежедневника"*/
+#NoteBook {
+  display: none;
+  grid-template-columns: 25% 50% 25%;
+  grid-template-rows: 10% 80% 10%;
+}
+/*Письменность в блокноте*/
+#NoteBookWriting {
+  grid-template-columns: 14% 70% 16%;
+  grid-template-rows: 12% 7.25% 7.25% 6.625% 6.625% 6.625% 6.625% 6.625% 6.625% 6.625% 6.625% 6.625% 6.625% 7.25%;
+}
+/*Новая фича "Терминал"*/
+#HandTerminal {
+  display: none;
+  grid-template-columns: 25% 50% 25%;
+  grid-template-rows: 10% 80% 10%;
+}
+/*Письменность в терминале*/
+#HandTerminalWriting {
+  grid-template-columns: 12% 76% 12%;
+  grid-template-rows: 6% 8% 12% 8% 1% 53% 6% 6%;
+}
+/*Название терминала*/
+#HandTerminalName {
+  font-family: 'Segoe UI';
+  color:#FFFFFF;
+}
+/*Информация о терминале*/
+#HandTerminalText1 {
+  font-family: 'Segoe UI';
+  color:#FFFFFF;
+}
+/*Поле с кодом терминала*/
+#Code{
+  font-family: Courier New;
+  color: #FFFFFF;
+  background:#000000;
+  resize: none;
+}
+/*Фича "Приборная панель" !Только для разработки! Для активации,
+ перевести состояние display: none; -> display: grid;*/
+#FormAndPost {
+  display: none;
+  grid-template-columns: 20% 20% 20% 40%; 
+  grid-template-rows: 40% 40% 20%;
+}
+/*Форма для отправки*/
+#sub {
+  color: #FFFFFF;
+  background:#333333;
+  font-family: Times New Roman;
+  grid-template-columns: 1% 48% 2% 48% 1%;
+  grid-template-rows: 1% 7% 1% 7% 1% 7% 1% 7% 1% 7% 1% 7% 1% 37% 1% 12% 1%;
+}
+/*Логин игрока*/
+#i1 {
+  grid-column: 4;
+  grid-row: 2;
+  height: auto;
+  width: auto;
+}
+/*Пароль игрока*/
+#i2 {
+  grid-column: 4;
+  grid-row: 4;
+  height: auto;
+  width: auto;
+}
+/*Уровень игрока*/
+#i3 {
+  grid-column: 4;
+  grid-row: 6;
+  height: auto;
+  width: auto;
+}
+/*Уровень карты*/
+#i4 {
+  grid-column: 4;
+  grid-row: 8;
+  height: auto;
+  width: auto;
+}
+/*До следующего уровня*/
+#i5 {
+  grid-column: 4;
+  grid-row: 10;
+  height: auto;
+  width: auto;
+}
+/*Код игрока*/
+#i6 {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row: 14;
+  height: auto;
+  width: auto;
+}
+/*Отправить форму с приборной панели*/
+#GOTO {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row: 16;
+  justify-self: center;
+}
+/*Панель для выбора*/
+#Custom {
+  color: #FFFFFF;
+  background:#333333;
+  font-family: Times New Roman;
+  grid-template-columns: 1% 48% 2% 48% 1%;
+  grid-template-rows: 2% 7% 3% 7% 3% 7% 3% 50% 4% 12% 2%;
+}
+/*Установить параметры*/
+#CustomSet {
+  grid-column-start: 2;
+  grid-column-end: 5;
+}
+/*Параметры, полученные с БД*/
+#defaultSet {
+  color: #FFFFFF;
+  background:#333333;
+  font-family: Times New Roman;  
+  grid-template-columns: 1% 48% 2% 48% 1%;
+  grid-template-rows: 2% 7% 3% 7% 3% 7% 3% 7% 3% 7% 3% 45% 3%;
+}
+/*Заголовок*/
+#NoteSet {
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+/*Код игрока*/
+#CodePL {
+  grid-row-start: 7;
+  grid-row-end: 8;
+}
+
+/*Grid, начало работы*/
+#all{
+  grid-template-columns: 15% 30% 15% 40%;
+  grid-template-rows: 30% 60% 10%;
+}
+/*Изображение*/
+#CurImg {
+  grid-row-start: 1;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+/*Надпись над окном вывода*/
+#Label{
+  grid-row: 1;
+  grid-column: 2;
+  font-family: Segoe UI;
+  align-self: end;
+  justify-self: center;
+}
+/*Окно вывода*/
+#TEXT1{
+  grid-row: 2;
+  grid-column: 2;
+  color: #FFFFFF;
+  background:#000000;
+  font-family: Courier New;
+  resize: none;
+}
+/*Блок задания*/
+#CurText{
+  grid-row: 1;
+  grid-column: 4;
+  font-family: Segoe UI;
+  color: #FFFFFF;
+  background:#333333;
+}
+/*Консоль*/
+#TEXT{
+  grid-row: 2;
+  grid-column: 4;
+  color: #FFFFFF;
+  background:#000000;
+  font-family: Courier New;
+  resize: none;
+}
+/*Все кнопки*/
+#allButtons {
+  grid-row: 3;
+  grid-column: 4;
+  grid-template-columns: 20% 20% 20% 40%;
+  grid-template-rows: 50% 50%;
+}
+
+
+/*Диалоговые окна*/
+#dialogoverlay{
+  display: none;
+  opacity: 0.01;
+  background: #FFF;
+}
+#dialogbox{
+  display: none;
+  background:#CFD2D4;
+  grid-template-columns: 0.33fr 0.34fr 0.33fr;
+  grid-template-rows: 30% 40% 30%;
+}
+#innerbox{
+  background: #2E2E2E;
+  border-radius: 7px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 25% 50% 25%;
+}
+#dialogboxhead{
+background: #666;
+color:#CCC;
+}
+#dialogboxbody{
+  background:#333;
+  color:#FFF;
+  text-align:center;
+  font-family: Segoe UI;  
+}
+#dialogboxfoot{
+  background: #666;
+  text-align:center;
+}
+
+@media screen and (orientation: portrait) {
+/*Адаптация под экраны*/
+#all{
+  grid-template-columns: 100%;
+  grid-template-rows: 10% 5% 20% 15% 20% 20% 10%;
+}
+
+/*Работа с изображениями: Главное, робот*/
+#CurImg{
+  grid-column:1;
+  grid-row-start: 1;
+  grid-row-end: 5;
+}
+/*Надпись над окном вывода*/
+#Label{
+  grid-column: 1;
+  grid-row: 2;
+  font-family: Segoe UI;
+  align-self: end;
+  justify-self: center;
+}
+/*Окно вывода*/
+#TEXT1{
+  grid-column: 1;
+  grid-row: 3;
+  color: #FFFFFF;
+  background:#000000;
+  font-family: Courier New;
+  resize: none;
+}
+/*Работа с блоком задания*/
+#CurText{
+  overflow-y: scroll;
+  grid-row: 5;
+  grid-column: 1;
+  font-family: Segoe UI;
+  color: #FFFFFF;
+  background:#333333;
+}
+#TEXT{
+  grid-row: 6;
+  grid-column: 1;
+  resize: none;
+  font-family: Courier New;
+  color: #FFFFFF;
+  background:#000000;
+}
+
+#allButtons {
+  grid-row: 7;
+  grid-column: 1;
+  grid-template-columns: 33.4% 33.3% 33.3%;
+  grid-template-rows: 100%;
+}
+
+#dialogbox{
+  display: none;
+  background:#CFD2D4;
+  grid-template-columns: 0.1fr 0.8fr 0.1fr;
+  grid-template-rows: 25% 50% 25%;
+}
+
+#NoteBook {
+  display: none;
+  grid-template-columns: 7.5% 85% 7.5%;
+  grid-template-rows: 7.5% 85% 7.5%;
+}
+
+/*Новая фича "Терминал"*/
+#HandTerminal {
+  display: none;
+  grid-template-columns: 7.5% 85% 7.5%;
+  grid-template-rows: 7.5% 85% 7.5%;
+}
+
+#HandTerminalWriting {
+  grid-template-columns: 12% 76% 12%;
+  grid-template-rows: 6% 8% 20% 8% 1% 45% 6% 6%;
+}
+
+}

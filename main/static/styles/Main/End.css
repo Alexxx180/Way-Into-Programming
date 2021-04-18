@@ -1,0 +1,37 @@
+body {
+	margin: 0;
+	background-image:url(/static/images/Backs/Winner.jpg);
+	background-color:#000000;
+	background-size:cover;
+}
+#All {
+	grid-template-rows: 25% 50% 25%;
+	grid-template-columns: 30% 35% 30%;
+}
+#TheEnd {
+	grid-template-rows: 80% 20%;
+	grid-template-columns: 30% 40% 30%;
+	color: #FFFFFF;
+	background:#333333;
+}
+#Fin {
+	color:#FFFFFF;
+	background: #BBBB00;
+}
+
+@media screen and (orientation: portrait) {
+/*Адаптация под экраны*/
+
+/*Адаптация*/
+#All {
+	grid-template-rows: 20% 60% 20%;
+	grid-template-columns: 10% 75% 10%;
+}
+#TheEnd {
+	grid-template-rows: 80% 20%;
+	grid-template-columns: 20% 60% 20%;
+	color: #FFFFFF;
+	background:#333333;
+}
+
+}

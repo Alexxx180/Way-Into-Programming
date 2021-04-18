@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Достижения</title>
+	<link rel="stylesheet" type="text/css" href="/static/styles/Total/Total.css">
+	<link rel="stylesheet" type="text/css" href="/static/styles/Total/Media.css">
+	<link rel="stylesheet" type="text/css" href="/static/styles/Main/Achs.css">
+</head>
+<body>
+<div id="all" class="pabs grid">
+	<section id="s1" class="gc2 whmax"><img id="a1" src="/static/images/Achievements/Locked/Bugs.png" class="whmax" /></section>
+	<section id="s2" class="gc2 whmax"><img id="a2" src="/static/images/Achievements/Locked/Home.png" class="whmax" /></section>
+	<section id="s3" class="gc2 whmax"><img id="a3" src="/static/images/Achievements/Locked/Pull.png" class="whmax" /></section>
+
+	<section id="s4" class="gc4 whmax"><img id="a4" src="/static/images/Achievements/Locked/Lv5.png"  class="whmax" /></section>
+	<section id="s5" class="gc4 whmax"><img id="a5" src="/static/images/Achievements/Locked/Lv20.png" class="whmax" /></section>
+	<section id="s6" class="gc4 whmax"><img id="a6" src="/static/images/Achievements/Locked/Lv35.png" class="whmax" /></section>
+	<section id="s7" class="gc4 whmax"><img id="a7" src="/static/images/Achievements/Locked/Lv50.png" class="whmax" /></section>
+
+	<section id="s8" class="gc6 whmax"><img id="a8" src="/static/images/Achievements/Locked/Noob.png" class="whmax" /></section>
+	<section id="s9" class="gc6 whmax"><img id="a9" src="/static/images/Achievements/Locked/Base.png" class="whmax" /></section>
+	<section id="s10" class="gc6 whmax"><img id="a10" src="/static/images/Achievements/Locked/Last.png" class="whmax"/></section>
+	
+	<section id="s11" class="gc2 whmax"><button type="submit" onclick="sub();" class="pnt btns fs200 pad10" id="Back">← Обратно</button></section>
+
+	<div id="hiddenFields" class="grow6 gcol2 bord shd">
+	<article>Логин :</article><div id="d1">{{ player }}</div>
+	<article>Пароль:</article><div id="d2">{{ player1 }}</div>
+	<article>Ур. и.:</article><div id="d3">{{ player2 }}</div>
+	<article>Ур. к.:</article><div id="d4">{{ player3 }}</div>
+	<article>До сл.:</article><div id="d5">{{ player4 }}</div>
+	</div>
+	<div class="r1s6 c2s5">
+<form id="f2" method="POST" >
+	{% csrf_token %}
+	<div id="OtherFields" class="fs100 bord shd">
+	<div id="F1">[i1] Логин игрока:</div>{{ form.IDplayer }}
+	<div id="F2">[i2] Пароль игрк.:</div>{{ form.NAMEplayer }}
+	<div id="F3">[i3] Уровень игр.:</div>{{ form.LEVELplayer }}
+  	<div id="F4">[i4] Уровень крт.:</div>{{ form.Level }}
+  	<div id="F5">[i5] До след. ур.:</div>{{ form.NEXTexp }}
+  	<div id="F6">[i6] Код у игрока:</div><br>{{ form.Code }}
+  	</div>
+</form>
+<script type="text/javascript" src="/static/scripts/Main/Menu/Achs.js"></script>
+</div>
+</div>
+</body>
+</html>

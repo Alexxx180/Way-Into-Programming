@@ -1,0 +1,39 @@
+@media screen and (orientation: portrait) {
+/*Адаптация под экраны*/
+#all{
+  grid-template-columns: 100%;
+  grid-template-rows: 50% 20% 20% 10%;
+}
+
+/*Работа с изображениями: Главное, робот*/
+#CurImg{
+grid-column:1;
+grid-row:1;
+}
+
+/*Работа с блоком задания*/
+#CurText{
+  overflow-y: scroll;
+  grid-row: 2;
+  grid-column: 1;
+  font-family: Segoe UI;
+  color: #FFFFFF;
+  background:#333333;
+}
+#TEXT{
+  grid-row: 3;
+  grid-column: 1;
+  resize: none;
+  font-family: Courier New;
+  color: #FFFFFF;
+  background:#000000;
+}
+
+#allButtons {
+  grid-row: 4;
+  grid-column: 1;
+  grid-template-columns: 33.4% 33.3% 33.3%;
+  grid-template-rows: 100%;
+}
+
+}

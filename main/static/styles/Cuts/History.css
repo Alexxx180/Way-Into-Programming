@@ -1,0 +1,41 @@
+body { margin: 0; background: #000000; }
+#all{
+  grid-template-columns: 10% 70% 15% 5%;
+  grid-template-rows: 85% 10% 5%;
+}
+#Hist {
+	grid-column-start: 1;
+	grid-column-end: 5;
+	grid-row-start: 1;
+	grid-row-end: 4;
+}
+#next {
+  color:#FFFFFF;
+  background: #0000AA;
+  grid-row: 2;
+  grid-column: 3;
+}
+#next:hover {
+  color: #55FF00;
+  background: #FF6600;
+}
+
+@media screen and (orientation: portrait) {
+/*Адаптация под экраны*/
+
+/*Адаптация*/
+#all{
+  grid-template-columns: 10% 50% 35% 5%;
+  grid-template-rows: 50% 15% 35%;
+}
+#Hist {
+	grid-column-start: 1;
+	grid-column-end: 5;
+	grid-row: 1;
+}
+#next {
+	grid-row: 2;
+  	grid-column: 3;
+}
+
+}

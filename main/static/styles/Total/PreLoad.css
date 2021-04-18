@@ -1,0 +1,36 @@
+#Load {
+  display: flex;
+  background: #000000;
+}
+#Mark {
+  align-self: flex-end;
+  color: #FFFFFF;
+  left: 5%;
+  font-family: Segoe UI;
+  -webkit-animation-name: blink; 
+  -webkit-animation-iteration-count: 2;  
+  -webkit-animation-duration: 1.5s; 
+}
+@-webkit-keyframes blink { 
+  0%  { color: #FFFFFF; }
+  5%  { color: #EEEEEE; }
+  10% { color: #DDDDDD; }
+  15% { color: #BBBBBB; }
+  20% { color: #AAAAAA; }
+  25% { color: #999999; }
+  30% { color: #888888; }
+  35% { color: #777777; }
+  40% { color: #666666; }
+  45% { color: #555555; }
+  50% { color: #444444; }
+  55% { color: #555555; }
+  60% { color: #666666; }
+  65% { color: #777777; }
+  70% { color: #888888; }
+  75% { color: #999999; }
+  80% { color: #AAAAAA; }
+  85% { color: #BBBBBB; }
+  90% { color: #CCCCCC; }
+  95% { color: #DDDDDD; }
+  100%{ color: #EEEEEE; }
+}

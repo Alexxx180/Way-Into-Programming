@@ -1,0 +1,223 @@
+body { margin:0; }
+.grid.main {
+  grid-template-columns: 0.3fr 0.4fr 0.3fr;
+  grid-template-rows: 0.31fr 0.35fr 0.34fr;
+}
+.grid.levels {
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr 0.033fr 0.001fr;
+}
+#mainmap {
+  width:50%;  
+  height:1750%;
+  left: 25%;
+}
+#allLevels {
+  height: 100vh;
+  width: 25%;
+  grid-template-columns: 100%;
+  grid-template-rows: 15% 45% 40%;
+}
+/*Шкала опыта*/
+.xp {
+  grid-row: 1;
+  grid-column: 1;
+  grid-template-rows: 17% 66% 17%;
+}
+#sa1 { grid-template-columns: 24% 76%; }
+#example1 {  width: 1%; }
+#sa { grid-template-columns: 4% 20% 76%; }
+#sa2 {
+  -webkit-font-smoothing : none;
+  font-family:Impact;
+  color: #FFFF00;
+  align-self: center;
+  justify-self: center;
+}
+/*Знак миссии*/
+#p0 {
+  align-self: center;
+  justify-self: center;
+  grid-template-columns: 30% 50% 20%;
+  grid-template-rows: 20% 50% 15% 10%;
+  grid-row:30;
+}
+/*Кнопка начала уровня*/
+#ZAPUSK {
+justify-self:center;
+align-self: end;
+color:#FFFFFF;
+background: #AAAA00;
+}
+/*Выравнивание фич*/
+#Features {
+  left:75%;
+  height: 100vh;
+  width: 25%;
+  grid-template-columns: 15% 30% 10% 30% 15%;
+  grid-template-rows: 15% 85%;
+}
+#Notes {
+  color:#FFFFFF;
+  background: #0055FF;
+}
+#Notes:hover {
+  background: #FF6600;
+}
+#Terminal {
+  color:#FFFFFF;
+  background: #0055FF;
+}
+#Terminal:hover {
+  background: #FF6600;
+}
+
+/*Фича "Записи ежедневника"*/
+#NoteBook {
+  display: none;
+  grid-template-columns: 25% 50% 25%;
+  grid-template-rows: 10% 80% 10%;
+}
+/*Письменность в блокноте*/
+#NoteBookWriting {
+  grid-template-columns: 14% 70% 16%;
+  grid-template-rows: 12% 7.25% 7.25% 6.625% 6.625% 6.625% 6.625% 6.625% 6.625% 6.625% 6.625% 6.625% 6.625% 7.25%;
+}
+/*Новая фича "Терминал"*/
+#HandTerminal {
+  display: none;
+  grid-template-columns: 25% 50% 25%;
+  grid-template-rows: 10% 80% 10%;
+}
+#HandTerminalWriting {
+  grid-template-columns: 12% 76% 12%;
+  grid-template-rows: 6% 8% 12% 8% 1% 53% 6% 6%;
+}
+#HandTerminalName {
+  font-family: Segoe UI;
+  color: #FFFFFF;
+}
+#HandTerminalText1 {
+  font-family: Segoe UI;
+  color: #FFFFFF; 
+}
+#CodeLength {
+  text-align: right;
+  font-family: Segoe UI;
+  color: #FFFFFF;
+}
+#Code{
+  font-family: Courier New;
+  color: #FFFFFF;
+  background:#000000;
+  resize: none;
+}
+#SaveCode {
+  justify-self: center;
+  width: 20%;
+  height: 100%;
+  color:#FFFFFF;
+  background: #00AA00;
+}
+#Form1 {
+  font-family: Times New Roman;
+  background:#333333;
+  color: #FFFFFF;
+  display: none;
+  grid-template-columns: 1% 48% 2% 48% 1%;
+  grid-template-rows: 1% 7% 1% 7% 1% 7% 1% 7% 1% 7% 1% 7% 1% 37% 1% 12% 1%;
+}
+#i1 {
+  grid-column: 4;
+  grid-row: 2;
+  height: auto;
+  width: auto;
+}
+#i2 {
+  grid-column: 4;
+  grid-row: 4;
+  height: auto;
+  width: auto;
+}
+#i3 {
+  grid-column: 4;
+  grid-row: 6;
+  height: auto;
+  width: auto;
+}
+#i4 {
+  grid-column: 4;
+  grid-row: 8;
+  height: auto;
+  width: auto;
+}
+#i5 {
+  grid-column: 4;
+  grid-row: 10;
+  height: auto;
+  width: auto;
+}
+#i6 {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row: 14;
+  height: auto;
+  width: auto;
+}
+#SpecialValues {
+  color: #FFFFFF;
+  background:#333333;
+  font-family: Times New Roman;
+  display: none;
+  overflow-y: scroll;
+  grid-template-columns: 1% 48% 2% 48% 1%;
+  grid-template-rows: 1% 7% 1% 7% 1% 7% 1% 7% 1% 7% 1% 7% 1% 37% 1% 12% 1%;
+}
+
+@media screen and (orientation: portrait) {
+/*Адаптация под экраны*/
+#all{
+  grid-template-columns: 100%;
+  grid-template-rows: 10% 5% 20% 15% 20% 20% 10%;
+}
+/*Выравнивание уровней*/
+#allLevels {
+  height: 15vh;
+  width: 50%;
+  grid-template-columns: 100%;
+  grid-template-rows: 100% 0% 0%;
+}
+/*Главная карта*/
+#mainmap {
+  width:100%;  
+  height:1750%;
+  left: 0%;
+}
+/*Выравнивание фич*/
+#Features {
+  left:50%;
+  height: 15vh;
+  width: 50%;
+  grid-template-columns: 15% 30% 10% 30% 15%;
+  grid-template-rows: 100%;
+}
+
+#NoteBook {
+  display: none;
+  grid-template-columns: 2.5% 85% 12.5%;
+  grid-template-rows: 2.5% 85% 12.5%;
+}
+
+/*Новая фича "Терминал"*/
+#HandTerminal {
+  display: none;
+  grid-template-columns: 2.5% 85% 12.5%;
+  grid-template-rows: 2.5% 85% 12.5%;
+}
+
+#HandTerminalWriting {
+  grid-template-columns: 12% 76% 12%;
+  grid-template-rows: 6% 8% 20% 8% 1% 45% 6% 6%;
+}
+
+}

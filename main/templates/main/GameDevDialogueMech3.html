@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+<title id='LevelTitle'>Сложность: базовая</title>
+<link rel="stylesheet" type="text/css" href="/static/styles/Total/PreLoad.css">
+<link rel="stylesheet" type="text/css" href="/static/styles/Total/Total.css" />
+<link rel="stylesheet" type="text/css" href="/static/styles/Total/Media.css" />
+<link rel="stylesheet" type="text/css" href="/static/styles/Total/NoteTerminal.css" />
+<link rel="stylesheet" type="text/css" href="/static/styles/Modes/Advance/BaseDifficult.css" />
+<script type="text/javascript" src="/static/scripts/Total/Total.js"></script>
+</head>
+<body bgcolor="#AAAAAA">
+  <!--Переход к HTML-->
+  <div id="Load" class="pfix whmax black z10"><p id="Mark" class="fs500 prel">Загрузка...</p></div>
+  <audio id="a1" src="/media/UnknownPlanet2.ogg" type="audio/ogg" autoplay controls loop hidden></audio>
+  <div id="FormAndPost" class="whmx2 pabs z9">
+  <form id="sub" method="POST" class="wauto bord shd grid fs100 gcol1 grow1">
+  {% csrf_token %}
+  <div id="F1" class="gcol2 grow2 wauto">[i1] Логин игрока   :</div> {{ form.IDplayer }}
+  <div id="F2" class="gcol2 grow4 wauto">[i2] Пароль игрока  :</div> {{ form.NAMEplayer }}
+  <div id="F3" class="gcol2 grow6 wauto">[i3] Уровень игрока :</div> {{ form.LEVELplayer }}
+  <div id="F4" class="gcol2 grow8 wauto">[i4] Уровень карты  :</div> {{ form.Level }}
+  <div id="F5" class="gcol2 grow10 wauto">[i5] До след. ур.   :</div> {{ form.NEXTexp }}
+  <div id="F6" class="c2s4 grow12 wauto">[i6]Код</div> {{ form.Code }}
+  <input type="submit" value="Перейти" id="GOTO" class="wauto fs100">
+  </form>
+  <div id="Custom" class="wauto grid fs100 bord shd grow1 gcol2">
+  <div id="CustomLvl" class="wauto grow2 gcol2">Уровень карты:</div>
+  <select id="SelectCustom" class="wauto grow2 gcol4 fs100" onchange="ChangeCustoms();">
+    <option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+    <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option>
+    <option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option>
+    <option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option>
+    <option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option>
+    <option>30</option><option>31</option><option>32</option><option>33</option><option>34</option><option>35</option>
+    <option>36</option><option>37</option><option>38</option><option>39</option><option>40</option><option>41</option>
+    <option>42</option><option>43</option><option>44</option><option>45</option><option>46</option><option>47</option>
+    <option>48</option><option>49</option><option>50</option><option>51</option><option>52</option><option>53</option>
+    <option>54</option><option>55</option><option>56</option><option>57</option><option>58</option><option>59</option>
+    <option>60</option><option>61</option><option>62</option><option>63</option><option>64</option><option>65</option>
+    <option>66</option><option>67</option><option>68</option><option>69</option><option>70</option><option>71</option>
+    <option>72</option><option>73</option><option>74</option><option>75</option><option>76</option><option>77</option>
+    <option>78</option><option>79</option><option>80</option><option>81</option><option>82</option><option>83</option>
+    <option>84</option><option>85</option><option>86</option><option>87</option>
+  </select>
+  <div id="CustomLV" class="wauto grow4 gcol2">Уровень игрока:</div><div id="CLV" class="wauto grow4 gcol4"></div>
+  <div id="CustomNEXT" class="wauto grow6 gcol2">До следующего уровня:</div><div id="CNEXT" class="wauto grow6 gcol4"></div>
+  <div id="CustomMisc" class="wauto grow8 gcol2">Логин игрока:<br><br>Пароль игрока:<br><br>Код игрока:<br><br>Заметка: последние три поля не являются просчитываемыми, не учитываются.</div><div id="CMisc" class="wauto grow8 gcol4"></div>
+  <input type="button" value="Установить" onclick="SetCustomSettings();" id="CustomSet" class="wauto grow10 fs100">
+  </div>
+  <div id="defaultSet" class="grid fs100 bord shd wauto grow1 gcol3">
+  <div id="NoteSet" class="wauto grow2"><center>Данные, полученные с БД</center></div>
+  <div id="LevelMap" class="wauto gcol2 grow6">Уровень карты</div><div id="CurPlayer" class="wauto gcol4 grow6">{{ player }}</div>
+  <div id="CodeOfPlayer" class="wauto gcol2 grow8">Код игрока</div><div id="CodePL" class="wauto gcol4">{{ player1 }}</div>
+  </div>
+  </div>
+
+	<div id="dialogoverlay" class="pfix whmx2 z10"></div>
+	<div id="dialogbox" class="pfix whmx2 z10">
+		<div id="innerbox" class="grid wauto grow2 gcol2 bord shd">
+			<div id="dialogboxhead" class="fs100 wauto gcol1 grow1"></div>
+			<div id="dialogboxbody" class="fs100 pad20 wauto gcol1 grow2"></div>
+			<div id="dialogboxfoot" class="fs100 pad10 wauto gcol1 grow3"></div>
+		</div>
+	</div>
+<!--<Вставка 4>-->
+<div id="all" class="pabs grid whmax">
+<img id="CurImg" class="whmax r1s4c1s4" src="/static/images/Backs/MostDifTime.jpg" width="100%" height="100%">
+<div id="CurText" class="fs100 wauto pad20 bord shd grow1 gcol4 scroll">{{ player }}</div>
+<div id="Label" class="fs500 gcol2 grow1">Вывод</div>
+<textarea id="TEXT1" class="fs100 pad10 wauto  bord shd grow2 gcol2" readonly></textarea>
+<textarea id="TEXT" class="fs125 pad10 wauto bord shd grow2 gcol4"></textarea>
+<div id="allButtons" class="whmax grid grow3 gcol4">
+<input type="button" value="Запуск" onclick="Proverka();" class="whmax fs100 pnt grow1 gcol1 btns" id="ZAPUSK">
+<input type="button" value="Записи" onclick="FGrid('NoteBook');" class="whmax fs100 pnt grow1 gcol2 btns" id="NoteButton">
+<input type="button" value="Код" onclick="FGrid('HandTerminal');" class="whmax fs100 pnt grow1 gcol3 btns" id="CodeButton">
+</div>
+</div>
+<!--Записи-->
+<div id='NoteBook' class="whmx2 z6 pfix">
+<img id="NoteBookImg" class="grow2 gcol2 z6" src="/static/images/GameMap/NoteBook1.png" height='100%' width='100%' />
+<div id="NoteBookWriting" class="whmax grid z7 grow2 gcol2">
+<div id="NoteCloseButton" class="z7 close fs150" onclick="FNone('NoteBook');"><center>[==]<br>\//</center></div>
+<!--Страницы -/- -->
+<p class="sheader gcol2 z7 fs150 grow1" id="SheetHeader"></p>
+<!--Запись 1-->
+<p class="nheader gcol2 z7 fs125 grow2" id="NoteHeader1"></p>
+
+<p class="notes gcol2 z7 fs100 grow3" id="Note1_1"></p>
+<p class="notes gcol2 z7 fs100 grow4" id="Note1_2"></p>
+<p class="notes gcol2 z7 fs100 grow5" id="Note1_3"></p>
+<!--Запись 2-->
+<p class="nheader gcol2 z7 fs125 grow6" id="NoteHeader2"></p>
+
+<p class="notes gcol2 z7 fs100 grow7" id="Note2_1"></p>
+<p class="notes gcol2 z7 fs100 grow8" id="Note2_2"></p>
+<p class="notes gcol2 z7 fs100 grow9" id="Note2_3"></p>
+<!--Запись 3-->
+<p class="nheader gcol2 z7 fs125 grow10" id="NoteHeader3"></p>
+
+<p class="notes gcol2 z7 fs100 grow11" id="Note3_1"></p>
+<p class="notes gcol2 z7 fs100 grow12" id="Note3_2"></p>
+<p class="notes gcol2 z7 fs100 grow13" id="Note3_3"></p>
+<!--Здесь прописываются на каком уровне стали открыты новые записи-->
+<p class="notes gcol3 z7 fs100 grow2" id="NoteUnlock1"></p>
+<p class="notes gcol3 z7 fs100 grow6" id="NoteUnlock2"></p>
+<p class="notes gcol3 z7 fs100 grow10" id="NoteUnlock3"></p>
+<div class="pswtch gcol3 whmax fs100 grow12" id='PrevPage' onclick="ToPrevPage();">◄Пред.</div>
+<div class="pswtch gcol3 whmax fs100 grow13" id='NextPage' onclick="ToNextPage();">След.►</div>
+</div>
+</div>
+<!--Походный терминал-->
+<div id="HandTerminal" class="whmx2 pfix z6">
+<img id="HandTerminalImg" class="grow2 gcol2 z6" src="/static/images/GameMap/TerminalCode1.png" height='100%' width='100%' />
+<div id="HandTerminalWriting" class="whmax grow2 gcol2 grid z7">
+<div class="close fs150" id="HandCloseButton" onclick="FNone('HandTerminal');"><center>[X]</center></div>
+<H1 class="fs200 grow2 gcol2 z6" id="HandTerminalName"><center>Походный терминал</center></H1>
+<p class="fs125 grow3 gcol2 z6" id="HandTerminalText1">Позволяет сохранить записанные здесь части кода, затем использовать его во время прохождения уровней.</p>
+<!--<p id="CodeLength">Ограничение: 0/500 символов</p>-->
+<textarea class="fs125 pad15 wauto bord shd gcol2 grow6" id="Code" readonly></textarea>
+</div>
+</div>
+<script type="text/javascript" src="/static/scripts/Modes/Advance/BsDfTasks.js"></script>
+<script type="text/javascript" src="/static/scripts/Modes/Advance/BsDfAnswers.js"></script>
+<script type="text/javascript" src="/static/scripts/Total/PreLoad.js"></script>
+</body>
+</html>

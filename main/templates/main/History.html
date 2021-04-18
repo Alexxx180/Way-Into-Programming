@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title id='LevelHistory'>История</title>
+</head>
+<link rel="stylesheet" type="text/css" href="/static/styles/Total/PreLoad.css">
+<link rel="stylesheet" type="text/css" href="/static/styles/Total/Total.css">
+<link rel="stylesheet" type="text/css" href="/static/styles/Total/Media.css">
+<link rel="stylesheet" type="text/css" href="/static/styles/Cuts/History.css">
+<script type="text/javascript" src="/static/scripts/Total/Total.js"></script>
+<body>
+<div id="Load" class="pfix whmax black z10"><p id="Mark" class="fs500 prel">Загрузка...</p></div>
+<div id="all" class="pabs whmx2 grid">
+<img src="/static/images/CutScenes/Beginner/BeginHistory1.gif" id="Hist" width="100%" height="100%" />
+<input type="button" class="btns shd whmax fs200 pnt" id="next" value="Далее" onclick="HistoryChange()"/>
+ <div id="P" >{{ player }}</div>
+ <div id="P1" >{{ player1 }}</div>
+ <div id="P2" >{{ player2 }}</div>
+ <div id="P3" >{{ player3 }}</div>
+ <div id="P4" >{{ player4 }}</div>
+</div>
+<script type="text/javascript" src="/static/scripts/Cuts/History.js"></script>
+<script type="text/javascript">
+function HistoryChange() {
+let HistName=[
+	["CutScenes/Beginner/BeginHistory1.gif","CutScenes/Beginner/BeginHistory2.gif","CutScenes/Beginner/BeginHistory3.gif","CutScenes/Beginner/BeginHistory4.gif","CutScenes/Beginner/BeginHistory5.gif"],
+	["CutScenes/Basic/BaseHistory1.gif","CutScenes/Basic/BaseHistory2.gif","CutScenes/Basic/BaseHistory3.gif","CutScenes/Basic/BaseHistory4.gif","CutScenes/Basic/BaseHistory5.gif"],
+	["CutScenes/Advanced/FinalHistory.gif"]
+];
+	if (huse>HistName[huseLv].length-1) {
+		let url_mask = "{% url 'path1' pk=12345 %}".replace(/12345/, Login.toString());
+        document.getElementById('next').onclick = window.location.replace(url_mask);
+	} else {
+		document.getElementById("Hist").src='/static/images/'+HistName[huseLv][huse];
+		huse++;
+	}
+}
+HistoryChange();
+</script>
+<script type="text/javascript" src="/static/scripts/Total/PreLoad.js"></script>
+</body>
+</html>

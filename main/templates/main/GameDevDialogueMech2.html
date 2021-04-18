@@ -2,273 +2,139 @@
 <html>
 <meta charset="utf-8">
 <head>
-<title>Пример диалога</title>
-<script type="text/javascript">
-  function Play() {
-            //document.getElementById("a1").src="/media/Fone-Mus_Laboratory1.ogg";
-            //document.getElementById("a1").play();
-            //document.getElementById("a1").pause();
-            document.getElementById("a1").play();
-    }
-</script>
-<style type="text/css">
-#dialogoverlay{
-	display: none;
-	opacity: .8;
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	background: #FFF;
-	width:100%;
-	z-index: 10;
-}
-#dialogbox{
-	display: none;
-	position: fixed;
-	background:#CFD2D4;
-	border-radius: 7px;
-	width:29%;
-	height: 400px;
-	z-index: 10;
-}
-#dialogbox>div{
-	background: #2E2E2E;
-	margin: 8px;
-	height:95%;
-}
-#dialogbox>div>#dialogboxhead{
-background: #666; font-size: 19px; height:24.5%; padding-left: 0.1%; color:#CCC;
-}
-#dialogbox>div>#dialogboxbody{
-	background: #333; padding: 20px; height:49.5%; color:#FFF; text-align:center; font-family: Segoe UI; padding-top: 5px;
-}
-#dialogbox>div>#dialogboxfoot{
-	background: #666; padding: 10px; height:15%; text-align:center;
-}
-	</style>
-  <script type="text/javascript">
-  	var dialog1="";
-    var EXP=[1246,1558,1870,2057,2571,3085,3393,4242,5090,5599,6999,8398,9238,11548,13858,15243,19054,22865,25151,31439,37727,41500,51875,62250,68475,85593,102712,112983,141229,169475];
-  	var nameButton1="OK";
-    var img1='/static/images/ErrorDIm.jpg';
-  function CustomAlert() {
-  	this.render=function(dialog){
-  	dialog1=dialog;
-  	var winW=window.innerWidth;
-  	var winH=window.innerHeight;
-  	var dialogoverlay=document.getElementById('dialogoverlay');
-  	var dialogbox=document.getElementById('dialogbox');
-  	dialogoverlay.style.display="block";
-  	dialogoverlay.style.display=winH+"px";
-  	dialogbox.style.left=(winW/2)-(550*.5)+"px";
-  	dialogbox.style.top=(winH/2)-200+"px";
-  	dialogbox.style.display="block";
-    if (dialog=='<h1>Победа!</h1>\n<h2>Уровень пройден успешно!</h2>\n<h3>Получено '+EXP[use1-29]+' очков опыта</h3>') {
-      nameButton1='Дальше!';
-      img1="/static/images/WinDim.jpg";
-    }
-    document.getElementById("ZAPUSK").disabled = true;
-    document.getElementById("TEXT").disabled = true;
-    document.getElementById("TEMHO").style.display = "block";
-  	document.getElementById('dialogboxhead').innerHTML="<img width='100%' height='100%' src='"+img1+"'></img>";
-  	document.getElementById('dialogboxbody').innerHTML="<p style='position:relative; top:-10%'>"+dialog;
-    if (dialog=='<h1>Победа!</h1>\n<h2>Уровень пройден успешно!</h2>\n<h3>Получено 10 очков опыта</h3>'){
-    document.getElementById('dialogboxfoot').innerHTML='<button type="submit" onclick="Alert.ok()" style="height:85%; cursor: pointer; font-family: Segoe UI; position:relative; top:10%; font-size:14pt; -moz-border-radius:  5px; -webkit-border-radius:  5px; border: 3px solid #CCCCCC; color:#FFFFFF; border-radius:  5px; width:25%; background: #999900">'+nameButton1+'</button>'; } else {
-  	document.getElementById('dialogboxfoot').innerHTML='<button onclick="Alert.ok()" style="height:85%; cursor: pointer; font-family: Segoe UI; position:relative; top:10%; font-size:14pt; -moz-border-radius:  5px; -webkit-border-radius:  5px; border: 3px solid #CCCCCC; color:#FFFFFF; border-radius:  5px; width:25%; background: #999900">'+nameButton1+'</button>';
-  }
-  	nameButton1="OK";
-    img1='/static/images/ErrorDIm.jpg';
-  }
-  this.ok=function(){
-  	document.getElementById("ZAPUSK").disabled = false;
-    document.getElementById("TEXT").disabled = false;
-    document.getElementById("TEMHO").style.display = "none";
-  	document.getElementById('dialogbox').style.display="none";
-  	document.getElementById('dialogoverlay').style.display="none";
-    if (dialog1=='<h1>Победа!</h1>\n<h2>Уровень пройден успешно!</h2>\n<h3>Получено '+EXP[use1-29]+' очков опыта</h3>') {
-      var LEVELplayer1=[26,27,27,28,29,29,29,30,31,31,32,32,33,33,33,34,34,34,35,35,35,36,36,37,37,37,38,38,39,39];
-      var Level1=[30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59];
-      var NEXTexp1=[886,2659,790,2369,7108,4024,630,1891,5672,73,14217,5818,28434,16886,3028,56867,37813,14948,79614,48175,10448,111460,59585,156044,87569,1976,218462,105479,305846,136372];
-      document.getElementById("i1").value="1";
-      document.getElementById("i2").value="CAHEK";
-      document.getElementById("i3").value=LEVELplayer1[use1-29];
-      document.getElementById("i4").value=Level1[use1-29];
-      document.getElementById("i5").value=NEXTexp1[use1-29];
-      //if (use1==57) {
-      //window.location.replace("/end");
-    //}
-    }
-  }
-  }
-  function Proverka() {
-    var Ans1=['print("Hello, world!")',
-    'print("What is your name?\\nMy name is Robo")',
-    'print("Are you the programmer?"+" Yes, I am!")',
-    'text="I am very smart."\nprint(text)',
-    'a=2748312\nb=7238742\nprint(a+b)',
-    'a=input()\nprint(a)',
-    'if (7>10):\n    print(\"истина\")\nelse:\n    print("ложь")',
-    'if ("Превед"=="Привет"):\n    print("Правильно")\nelse:\n    print("Неправильно")',
-    'if (log):\n    print("True")\nelse:\n    print("False")',
-    'num=1\nwhile (num<=10):\n    print(p)\n    p=p+1',
-    'p=1\nprint(p)\np=p+3\nwhile (p<7):\n    print(p)\n    p=p+3',
-    'from array import *\nj=0\nd= array(\'s\',["Илья","Светлана","Сергей])\nwhile (j<len(d)):\n    print(d[j])\n    j=j+1',
-    'h1=0\nd1=["Hello",1,False]\nwhile (h1<len(d1)):\n    print(d1[h1])\n    h1=h1+1',
-    'for i in range(2,15,4):\n    print(i)',
-    'B=[2,52,12,83,7]\nPr=1\nfor i in B:\n    Pr=Pr*B[i]\nprint(Pr)',
-    'a=12\nb=21\na,b=b,a\nprint(a, b)',
-    'x=3256\nx=x**34\nprint(x)',
-    'x,y=input().split()\nprint(x+y)',
-    'print("Дружба","это","здорово",sep="-")',
-    'print("Космос ",end="необъятен")',
-    'b=(\'Happy\',\'days\')\nprint(b)',
-    'd={"Sample":1, "text":2}\nprint(d)',
-    'c=set(\"Here\")\nprint(c)',
-    'txt="Друг человека"\nprint(txt[0:4])',
-    'c,t=input().split()\nc,t=t,c\nprint(c, t)',
-    'x=input()\ny=set(x)\nprint(y)',
-    'for i in range(0,10,1):\n    print("Даю слово")',
-    'G=[1,2,1,2,1,2,1,2]\nfor i in G:\n    print("Объект № "+i)',
-    'declartion1="мир Заключить нами между"\nprint(declartion1[4:14]+declartion1[0:3]+declartion1[18:24]+declartion1[3:4]+declartion1[14:18])'
-    ];
-    var Ans2=[
-      'Hello, world!',
-    'What is your name?\nMy name is Robo',
-    'Are you the programmer? Yes, I am!',
-    'I am very smart.',
-    '9987054',
-    'Приём значения с планеты Земля...\n5',
-    'ложь',
-    'Неправильно',
-    'False',
-    '1\n2\n3\n4\n5\n6\n7\n8\n9\n10',
-    '1\n4\n7',
-    'Илья\nСветлана\nСергей',
-    'Hello\n1\nFalse',
-    '2\n6\n10\n14\n18',
-    '725088',
-    '21 12',
-    '269941384735870958592693490880388728265266543946156511414247732661870429020101620979439977385313453326347648666955677696',
-    'Приём значения с планеты Земля...\n404',
-    'Дружба-это-здорово',
-    'Космос необъятен',
-    '(\'Happy\',\'days\')',
-    '{"Sample":1, "text":2}',
-    '{\'H\', \'e\', \'r\'}',
-    'Друг',
-    'Приём значения с планеты Земля...\n456 123',
-    'Приём значения с планеты Земля...\n{\'и\', \'т\', \'П\', \'р\', \'в\', \'е\'}',
-    'Даю слово\nДаю слово\nДаю слово\nДаю слово\nДаю слово\nДаю слово\nДаю слово\nДаю слово\nДаю слово\nДаю слово',
-    'Объект № 1\nОбъект № 2\nОбъект № 1\nОбъект № 2\nОбъект № 1\nОбъект № 2\nОбъект № 1\nОбъект № 2',
-    'Заключить мир между нами'
-    ];
-  	if (document.getElementById("TEXT").value.toString()==Ans1[use1-29]) {
-  		document.getElementById("TEXT1").value=Ans2[use1-29];
-  		Alert.render('<h1>Победа!</h1>\n<h2>Уровень пройден успешно!</h2>\n<h3>Получено '+EXP[use1-29]+' очков опыта</h3>');
-  	}
-  	else {
-     // alert(Ans1[use1-29]);
-      document.getElementById("TEXT1").value="Error. Something went wrong...";
-  		Alert.render('<h1>Ай-ай-ай!</h1>\n<h2>Похоже в коде где-то ошибка...</h2>');
-  	}
-  }
- /* function Proverka1() {
-    var LEVELplayer1=[26,27,27,28,29,29,29,30,31,31,32,32,33,33,33,34,34,34,35,35,35,36,36,37,37,37,38,38,39,39];
-      var Level1=[30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59];
-      var NEXTexp1=[886,2659,790,2369,7108,4024,630,1891,5672,73,14217,5818,28434,16886,3028,56867,37813,14948,79614,48175,10448,111460,59585,156044,87569,1976,218462,105479,305846,136372];
-    document.getElementById("i2").value=document.getElementById('TEXT').value;
-    document.getElementById("i1").value="Вафля";
-      document.getElementById("i3").value=LEVELplayer1[use1-29];
-      document.getElementById("i4").value=Level1[use1-29];
-      document.getElementById("i5").value=NEXTexp1[use1-29];
-    //alert(document.getElementById("tev").innerText);
-    alert(document.getElementById("i1").value);
-    alert(document.getElementById("i2").value);
-    alert(document.getElementById("i3").value);
-    alert(document.getElementById("i4").value);
-    alert(document.getElementById("i5").value);
-    document.getElementById("da").submit();
-  }*/
-  var Alert=new CustomAlert();
-  </script>
+<title id='LevelTitle'>Сложность: базовая</title>
+<link rel="stylesheet" type="text/css" href="/static/styles/Total/PreLoad.css" />
+<link rel="stylesheet" type="text/css" href="/static/styles/Total/Total.css" />
+<link rel="stylesheet" type="text/css" href="/static/styles/Total/Media.css" />
+<link rel="stylesheet" type="text/css" href="/static/styles/Total/NoteTerminal.css" />
+<!--<link rel="stylesheet" type="text/css" href="/static/styles/Portrait/Advanced.css" />-->
+<link rel="stylesheet" type="text/css" href="/static/styles/Modes/Advance/BaseDifficult.css" />
+<script type="text/javascript" src="/static/scripts/Total/Total.js"></script>
 </head>
-<body bgcolor="#AAAAAA" onmouseover="Play();" onmouseout="Play();" onclick="Play();">
-  <form id="da" method="POST">
+<body bgcolor="#AAAAAA">
+  <!--Переход к HTML-->
+  <div id="Load" class="pfix whmax black z10"><p id="Mark" class="fs500 prel">Загрузка...</p></div>
+  <audio id="a1" src="/media/UnknownPlanet2.ogg" type="audio/ogg" autoplay controls loop hidden></audio>
+  <div id="FormAndPost" class="whmx2 pabs z9">
+  <form id="sub" method="POST" class="wauto bord shd grid fs100 gcol1 grow1">
   {% csrf_token %}
-  {{ form.IDplayer }}<br>
-  {{ form.NAMEplayer }}<br>
-  {{ form.LEVELplayer }}<br>
-  {{ form.Level }}<br>
-  {{ form.NEXTexp }}
-	<div id="dialogoverlay"></div>
-	<div id="dialogbox">
-		<div>
-			<div id="dialogboxhead"></div>
-			<div id="dialogboxbody"></div>
-			<div id="dialogboxfoot"></div>
+  <div id="F1" class="gcol2 grow2 wauto">[i1] Логин игрока   :</div> {{ form.IDplayer }}
+  <div id="F2" class="gcol2 grow4 wauto">[i2] Пароль игрока  :</div> {{ form.NAMEplayer }}
+  <div id="F3" class="gcol2 grow6 wauto">[i3] Уровень игрока :</div> {{ form.LEVELplayer }}
+  <div id="F4" class="gcol2 grow8 wauto">[i4] Уровень карты  :</div> {{ form.Level }}
+  <div id="F5" class="gcol2 grow10 wauto">[i5] До след. ур.   :</div> {{ form.NEXTexp }}
+  <div id="F6" class="c2s4 grow12 wauto">[i6]Код</div> {{ form.Code }}
+  <input type="submit" value="Перейти" id="GOTO" class="wauto fs100">
+  </form>
+  <!--</form>-->
+  <div id="Custom" class="wauto grid fs100 bord shd grow1 gcol2">
+  <div id="CustomLvl" class="wauto grow2 gcol2">Уровень карты:</div>
+  <select id="SelectCustom" class="wauto grow2 gcol4 fs100" onchange="ChangeCustoms();">
+    <option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+    <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option>
+    <option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option>
+    <option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option>
+    <option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option>
+    <option>30</option><option>31</option><option>32</option><option>33</option><option>34</option><option>35</option>
+    <option>36</option><option>37</option><option>38</option><option>39</option><option>40</option><option>41</option>
+    <option>42</option><option>43</option><option>44</option><option>45</option><option>46</option><option>47</option>
+    <option>48</option><option>49</option><option>50</option><option>51</option><option>52</option><option>53</option>
+    <option>54</option><option>55</option><option>56</option><option>57</option><option>58</option><option>59</option>
+    <option>60</option><option>61</option><option>62</option><option>63</option><option>64</option><option>65</option>
+    <option>66</option><option>67</option><option>68</option><option>69</option><option>70</option><option>71</option>
+    <option>72</option><option>73</option><option>74</option><option>75</option><option>76</option><option>77</option>
+    <option>78</option><option>79</option><option>80</option><option>81</option><option>82</option><option>83</option>
+    <option>84</option><option>85</option><option>86</option><option>87</option>
+  </select>
+  <div id="CustomLV" class="wauto grow4 gcol2">Уровень игрока:</div><div id="CLV" class="wauto grow4 gcol4"></div>
+  <div id="CustomNEXT" class="wauto grow6 gcol2">До следующего уровня:</div><div id="CNEXT" class="wauto grow6 gcol4"></div>
+  <div id="CustomMisc" class="wauto grow8 gcol2">Логин игрока:<br><br>Пароль игрока:<br><br>Код игрока:<br><br>Заметка: последние три поля не являются просчитываемыми, не учитываются.</div><div id="CMisc" class="wauto grow8 gcol4"></div>
+  <input type="button" value="Установить" onclick="SetCustomSettings();" id="CustomSet" class="wauto grow10 fs100">
+  </div>
+
+  <div id="defaultSet" class="grid fs100 bord shd wauto grow1 gcol3">
+  <div id="NoteSet" class="wauto grow2"><center>Данные, полученные с БД</center></div>
+  <div id="LevelMap" class="wauto gcol2 grow6">Уровень карты</div><div id="CurPlayer" class="wauto gcol4 grow6">{{ player }}</div>
+  <div id="CodeOfPlayer" class="wauto gcol2 grow8">Код игрока</div><div id="CodePL" class="wauto gcol4">{{ player1 }}</div>
+  </div>
+  </div>
+
+	<div id="dialogoverlay" class="pfix whmx2 z10"></div>
+	<div id="dialogbox" class="pfix whmx2 z10">
+		<div id="innerbox" class="grid wauto grow2 gcol2 bord shd">
+			<div id="dialogboxhead" class="fs100 wauto gcol1 grow1"></div>
+			<div id="dialogboxbody" class="fs100 pad20 wauto gcol1 grow2"></div>
+			<div id="dialogboxfoot" class="fs100 pad10 wauto gcol1 grow3"></div>
 		</div>
 	</div>
-  </form>
-  <audio id="a1" style="position:absolute; z-index: 9999;" src="/media/UnknownPlanet2.ogg" type="audio/ogg" autoplay controls loop hidden></audio>
-<!--Сюда кладём фон Андрея (путь к файлу (png,gif,jpg))-->
-<!--Я сжал изображение чтобы оно не вылезло за консоль, но если надо можно удалить 'width="60%"'-->
-<div style="height: 100%; width:61.9%; position: absolute; left: 0px; top:0px;">
-<img src="/static/images/BaseDifTime.jpg" width="100%" height="100%">
+
+ 
+<!--<Вставка 4>-->
+<div id="all" class="pabs grid whmax">
+
+<!--Блоки изображений-->
+<img id="CurImg" class="whmax" src="/static/images/Backs/BaseDifTime.jpg" width="100%" height="100%">
+<div id="Label" class="fs500">Вывод</div>
+<textarea id="TEXT1" class="fs100 pad10 wauto  bord shd" readonly></textarea>
+
+<!--Блоки текста-->
+<div id="CurText" class="fs100 wauto pad20 bord shd">{{ player }}</div>
+<textarea id="TEXT" class="fs125 pad10 wauto bord shd"></textarea>
+
+<!--Кнопки-->
+<div id="allButtons" class="whmax grid">
+<input type="button" value="Запуск" onclick="Proverka();" class="whmax fs100 pnt grow1 gcol1 btns" id="ZAPUSK">
+<input type="button" value="Записи" onclick="FGrid('NoteBook');" class="whmax fs100 pnt grow1 gcol2 btns" id="NoteButton">
+<input type="button" value="Код" onclick="FGrid('HandTerminal');" class="whmax fs100 pnt grow1 gcol3 btns" id="CodeButton">
 </div>
 
-<div id="CurText" style="position: absolute; top: 0%; left:62%; border: 3px solid #CCCCCC; color: #FFFFFF; box-shadow: 0 0 30px rgba(0,0,0,0.5); background:#333333; font-family: Segoe UI; font-size:14pt; padding: 25px; padding-top: 30px; width:35%; height: 93.5%">{{ player }}
 </div>
-<div style="position: absolute; left:28%; top: 7.5%;  font-family: Segoe UI; font-size:28pt;">
-	Вывод
+<!--Записи-->
+<div id='NoteBook' class="whmx2 z6 pfix">
+<img id="NoteBookImg" class="grow2 gcol2 z6" src="/static/images/GameMap/NoteBook1.png" height='100%' width='100%' />
+<div id="NoteBookWriting" class="whmax grid z7 grow2 gcol2">
+<div id="NoteCloseButton" class="z7 close fs150" onclick="FNone('NoteBook');"><center>[==]<br>\//</center></div>
+<!--Страницы -/- -->
+<p class="sheader gcol2 z7 fs150 grow1" id="SheetHeader"></p>
+<!--Запись 1-->
+<p class="nheader gcol2 z7 fs125 grow2" id="NoteHeader1"></p>
+
+<p class="notes gcol2 z7 fs100 grow3" id="Note1_1"></p>
+<p class="notes gcol2 z7 fs100 grow4" id="Note1_2"></p>
+<p class="notes gcol2 z7 fs100 grow5" id="Note1_3"></p>
+<!--Запись 2-->
+<p class="nheader gcol2 z7 fs125 grow6" id="NoteHeader2"></p>
+
+<p class="notes gcol2 z7 fs100 grow7" id="Note2_1"></p>
+<p class="notes gcol2 z7 fs100 grow8" id="Note2_2"></p>
+<p class="notes gcol2 z7 fs100 grow9" id="Note2_3"></p>
+<!--Запись 3-->
+<p class="nheader gcol2 z7 fs125 grow10" id="NoteHeader3"></p>
+
+<p class="notes gcol2 z7 fs100 grow11" id="Note3_1"></p>
+<p class="notes gcol2 z7 fs100 grow12" id="Note3_2"></p>
+<p class="notes gcol2 z7 fs100 grow13" id="Note3_3"></p>
+<!--Здесь прописываются на каком уровне стали открыты новые записи-->
+<p class="notes gcol3 z7 fs100 grow2" id="NoteUnlock1"></p>
+<p class="notes gcol3 z7 fs100 grow6" id="NoteUnlock2"></p>
+<p class="notes gcol3 z7 fs100 grow10" id="NoteUnlock3"></p>
+<div class="pswtch gcol3 whmax fs100 grow12" id='PrevPage' onclick="ToPrevPage();">◄Пред.</div>
+<div class="pswtch gcol3 whmax fs100 grow13" id='NextPage' onclick="ToNextPage();">След.►</div>
 </div>
-<!--<div id="tev">{{ pop }}</div>-->
-<textarea id="TEXT1" style="position: absolute; left:15%; top: 17.5%; border: 3px solid #CCCCCC; color: #FFFFFF; box-shadow: 0 0 30px rgba(0,0,0,0.5); background:#000000; font-family: Courier New; font-size:14pt; padding: 25px; resize: none; padding-top: 30px; width:30%; height: 70%" readonly></textarea>
-<!--Этот блок удаляешь и вставляешь сюда поле ввода, если надо кинешь мне потом файл с подготовленным кодом я допишу стили чтобы ввод смотрелся эффектнее-->
-	<textarea id="TEXT" style="position: absolute; top: 0%; left:64.5%; top: 37.5%; border: 3px solid #CCCCCC; color: #FFFFFF; box-shadow: 0 0 30px rgba(0,0,0,0.5); background:#000000; font-family: Courier New; font-size:14pt; padding: 25px; resize: none; padding-top: 30px; width:30%; height: 37.5%"></textarea>
-<input type="button" value="Запуск" onclick="Proverka();" id="ZAPUSK" style="position: absolute; cursor: pointer; top: 90%; left:77%; font-family: Segoe UI; font-size:14pt; -moz-border-radius:  5px; -webkit-border-radius:  5px; border: 3px solid #CCCCCC; color:#FFFFFF; border-radius:  5px; width: 10%; height: 7%; background: #00AA00">
-<div style="background-color:#4B4B4B; opacity: 0.6; position: absolute; top:0px; left: 0px; height: 100%; width: 100%; z-index:9; display: none;" id="TEMHO"></div>
 </div>
-<script type="text/javascript">
-  //document.getElementById("TEXT1").value=document.getElementById("tev").innerText;
-  //alert(document.getElementById("tev").innerText);
-  var use1=Number(document.getElementById("CurText").innerText);
-var dialogs=[
-    "Задание: попробуйте создать программу, которая поможет вывести на экран фразу \"Hello world!\"\n\nПример:\nprint(\"Hello, newcomer!\")",
-    "Задание: попробуйте создать программу, которая поможет вывести на экран фразу\n\"What is your name?\nMy name is Robo\"\n\nПример:\nprint(\"I want\\nmake it better\")",
-    "Задание: попробуйте создать программу, которая поможет вывести на экран фразу \"Are you the programmer? Yes, I am!\" из 2 фраз: \"Are you the programmer? \" и \"Yes, I am!\"\n\nПример:\nprint(\"I can't believe it.\"+\" You did it!\")",
-    "Задание: попробуйте создать программу, которая поможет вывести на экран фразу \"I am very smart.\" при помощи переменной text\n\nПример:\ntext=\"Hey! Don't forget the variables.\"\nprint(text)",
-    "Задание: попробуйте создать программу, которая поможет решить пример 2748312+7238742 с помощью переменных a и b\n\nПример:\na=6475\nb=2310\nprint(a-b)",
-    "Задание: попробуйте создать программу, которая поможет ответить на вопрос \"Сколько пальцев у тебя на руке?\" с помощью ввода данных\n\nПример:\nsampletext=input()\nprint(sampletext)",
-    "Задание: попробуйте создать программу, которая поможет ответить на вопрос \"7 больше 10?\", если да - ответ 'истина', иначе 'ложь' \n\nПример:\nif (7>10):\n    print(\"7 больше\")",
-    "Задание: попробуйте создать программу, которая поможет сравнить слова \"Превед\" и \"Привет\", если они одинаковы - вывести \"Правильно\", иначе - \"Неправильно\"\n\nПример:\nif (\"Здраствуй\"!=\"Здравствуй\"):\n    print(\"Не правильно\")",
-    "Задание: попробуйте создать программу, которая проверит является ли переменная log Истиной, если да - вывод \"True\", иначе - \"False\"\n\nПример:\nlogic=True\nif (logic):\n    print(\"True\")",
-    "Задание: попробуйте создать программу, которая посчитает c помощью переменной num до 10 и выведет всё на экран",
-    "Задание: попробуйте создать программу, которая выведет фразу \"Программирование - это нечто\" с помощью переменной p хотя бы 1 раз, при начальном значении p=1 условии p<7, действие print(p) и увеличение p на 3 при его выполнении",
-    "Задание: попробуйте создать программу, которая выведет 3 имени подряд \"Илья\",\"Светлана\",\"Сергей\" с помощью массива d и переменной j",
-    "Задание: попробуйте создать программу, которая выведет 3 значения подряд \"Hello\",1,False с помощью списка d1 и переменной h1",
-    "Задание: попробуйте создать программу, которая выведет значение переменной i начиная с 2 до 15 с шагом 4 в цикле for",
-    "Задание: попробуйте создать программу, которая перемножит все значения списка B с элементами 2,52,12,83,7 с помощью цикла for, переменной цикла i, и переменной Pr для ответа и выведет ответ на экран",
-    "Задание: попробуйте создать программу, которая поменяет 2 значения переменных a и b: 12 и 21 и выведет их на экран",
-    "Задание: попробуйте создать программу, которая возведёт значение переменной x: 3256 в степень 34",
-    "Задание: попробуйте создать программу, которая при вводе 2 значений переменных x и y складывает их и выводит ответ на экран",
-    "Задание: попробуйте создать программу, которая создаст между фразами \"Дружба\",\"это\",\"здорово\" разделитель \"-\" и выведет на экран целую фразу",
-    "Задание: попробуйте создать программу, которая создаст фразу \"Космос \" и дополнит словом \"необъятен\" с выводом на экран",
-    "Задание: попробуйте создать кортеж b из элементов 'Happy','days' и вывести его на экран",
-    "Задание: попробуйте создать словарь d из элементов \"Sample\",\"text\" и вывести его на экран",
-    "Задание: попробуйте создать множество c из элемента \"Here\" и вывести его на экран",
-    "Задание: попробуйте сделать из значения \"Друг человека\" переменной txt фразу \"Друг\" и выведите результат на экран",
-    "Задание: попробуйте создать программу \"обменник значений\", с вводом 2 значений c и t и возможностью увидеть значения, которые претерпели обмен",
-    "Задание: попробуйте создать программу \"поисковик повторений\", с вводом значения переменной x и распознаванием повторения букв во фразе, если оно есть и выводом только уникальных значений с помощью переменной y",
-    "Задание: попробуйте создать программу \"обещатель\", с использованием фразы \"Даю слово\", выводящую её на экран 10 раз, используйте переменную i",
-    "Задание: попробуйте создать программу \"подписыватель\", с использованием списка G состоящего из элементов 1,2,1,2,1,2,1,2 и переменной i, нужно сделать подпись к каждому элементу по примеру: \"Объект № 1\" и вывести на экран",
-    "Задание: попробуйте создать программу, которая изменит значение \"мир Заключить нами между\" переменной declaration1 на \"Заключить мир между нами\" и выведет на экран, пользоваться другими фразами и менять текст запрещено, это официальный документ!",
-    ];
-    document.getElementById("CurText").innerText=dialogs[use1-29];
-    //alert(123);
-    //if ((document.getElementById("tev").innerText!=0)&&(document.getElementById("tev").innerText!=1234)){
-     //Proverka1();
-   // }
-    //document.getElementById("tev").innerText="";
-  </script>
+<!--Походный терминал-->
+<div id="HandTerminal" class="whmx2 pfix z6">
+<img id="HandTerminalImg" class="grow2 gcol2 z6" src="/static/images/GameMap/TerminalCode1.png" height='100%' width='100%' />
+<div id="HandTerminalWriting" class="whmax grow2 gcol2 grid z7">
+<div class="close fs150" id="HandCloseButton" onclick="FNone('HandTerminal');"><center>[X]</center></div>
+<H1 class="fs200 grow2 gcol2 z6" id="HandTerminalName"><center>Походный терминал</center></H1>
+<p class="fs125 grow3 gcol2 z6" id="HandTerminalText1">Позволяет сохранить записанные здесь части кода, затем использовать его во время прохождения уровней.</p>
+<!--<p id="CodeLength">Ограничение: 0/500 символов</p>-->
+<textarea class="fs125 pad15 wauto bord shd gcol2 grow6" id="Code" readonly></textarea>
+</div>
+</div>
+<script type="text/javascript" src="/static/scripts/Modes/Advance/BsDfTasks.js"></script>
+<script type="text/javascript" src="/static/scripts/Modes/Advance/BsDfAnswers.js"></script>
+<script type="text/javascript" src="/static/scripts/Total/PreLoad.js"></script>
 </body>
 </html>

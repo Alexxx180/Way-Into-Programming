@@ -1,0 +1,13 @@
+var huse=0;
+var Login=document.getElementById("P").innerText;
+var Pass=document.getElementById("P1").innerText;
+var LV=Number(document.getElementById("P2").innerText);
+var Level=Number(document.getElementById("P3").innerText);
+var Next=Number(document.getElementById("P4").innerText);
+document.getElementById("P").innerText="";
+document.getElementById("P1").innerText="";
+document.getElementById("P2").innerText="";
+document.getElementById("P3").innerText="";
+document.getElementById("P4").innerText="";
+var huseLv=(Level<28)?0:(Level<57)?1:2;
+document.getElementById("LevelHistory").innerText=(Level<28)?"Начало":(Level<57)?"Мирный договор":"Великие облака";
